@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Yenifer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  overflow:hidden;
+  color:white;
+
+  background:url("fondo.png") no-repeat center top;
+  background-size:cover;
+  position:relative;
+}
+
+/* Capa ligera para contraste */
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.25);
+  z-index:1;
+}
+
+/* ⭐ Animación de estrellas */
+.stars{
+  position:absolute;
+  inset:0;
+  background:transparent;
+  z-index:2;
+  overflow:hidden;
+}
+
+.stars span{
+  position:absolute;
+  width:2px;
+  height:2px;
+  background:white;
+  border-radius:50%;
+  opacity:0.8;
+  animation:twinkle 4s infinite ease-in-out;
+}
+
+@keyframes twinkle{
+  0%,100%{opacity:0.2;}
+  50%{opacity:1;}
+}
+
+/* Contenido */
+.contenido{
+  position:relative;
+  z-index:3;
+  max-width:750px;
+  padding:40px;
+  animation:fadeIn 1.5s ease forwards;
+  opacity:0;
+}
+
+/* TÍTULO sólido violeta oscuro */
+h1{
+  font-size:2.4rem;
+  margin-bottom:25px;
+  font-weight:800;
+  color:#8a2be2; /* violeta intenso sólido */
+  text-shadow:
+    0 0 8px rgba(138,43,226,0.9),
+    0 0 18px rgba(75,0,130,0.8);
+}
+
+/* PÁRRAFO blanco sólido con sombra */
+p{
+  font-size:1.15rem;
+  line-height:1.8;
+  font-weight:300;
+  color:#ffffff;
+  text-shadow:
+    0 0 6px rgba(0,0,0,0.9),
+    0 0 12px rgba(0,0,0,0.7);
+}
+
+/* Animación entrada */
+@keyframes fadeIn{
+  to{opacity:1;}
+}
+
+/* Ajuste móvil */
+@media (max-width:768px){
+
+  body{
+    background-position:center top;
+    background-size:cover;
+  }
+
+  .contenido{
+    padding:25px;
+  }
+
+  h1{
+    font-size:1.7rem;
+  }
+
+  p{
+    font-size:1rem;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<div class="stars">
+  <!-- Generamos estrellas -->
+  <span style="top:10%;left:20%;animation-delay:1s;"></span>
+  <span style="top:30%;left:70%;animation-delay:2s;"></span>
+  <span style="top:50%;left:40%;animation-delay:0.5s;"></span>
+  <span style="top:70%;left:80%;animation-delay:3s;"></span>
+  <span style="top:85%;left:15%;animation-delay:1.5s;"></span>
+  <span style="top:60%;left:55%;animation-delay:2.5s;"></span>
+  <span style="top:25%;left:35%;animation-delay:0.8s;"></span>
+  <span style="top:75%;left:60%;animation-delay:1.2s;"></span>
+</div>
+
+<div class="contenido">
+  <h1>Que tengas un hermoso día, Yenifer</h1>
+  <p>
+    No dejes de sonreírle a la vida.<br>
+    Tienes una energía especial que ilumina todo a tu alrededor.<br>
+    Hoy solo quería recordártelo.<br><br>
+    Que tengas un día increíble…<br>
+    y bastante BOOYAH 🔥
+  </p>
+</div>
+
+</body>
+</html>
