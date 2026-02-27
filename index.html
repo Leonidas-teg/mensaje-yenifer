@@ -22,100 +22,88 @@ body{
   align-items:center;
   text-align:center;
   overflow:hidden;
+  color:white;
 
-  background-image:url("fondo.png");
-  background-repeat:no-repeat;
-  background-position:center top;
+  background:url("fondo.png") no-repeat center top;
   background-size:cover;
-  background-attachment:scroll;
+  position:relative;
 }
 
-/* Capa ligera para contraste (muy equilibrada) */
+/* Capa ligera para contraste */
 .overlay{
   position:absolute;
   inset:0;
   background:rgba(0,0,0,0.25);
+  z-index:1;
 }
 
-/* Contenedor */
+/* ⭐ Animación de estrellas */
+.stars{
+  position:absolute;
+  inset:0;
+  background:transparent;
+  z-index:2;
+  overflow:hidden;
+}
+
+.stars span{
+  position:absolute;
+  width:2px;
+  height:2px;
+  background:white;
+  border-radius:50%;
+  opacity:0.8;
+  animation:twinkle 4s infinite ease-in-out;
+}
+
+@keyframes twinkle{
+  0%,100%{opacity:0.2;}
+  50%{opacity:1;}
+}
+
+/* Contenido */
 .contenido{
   position:relative;
-  z-index:2;
+  z-index:3;
   max-width:750px;
   padding:40px;
-  animation:fadeIn 2s ease forwards;
+  animation:fadeIn 1.5s ease forwards;
   opacity:0;
 }
 
-/* Título con mismo tono pero más nítido */
+/* TÍTULO sólido violeta oscuro */
 h1{
-  font-size:2.3rem;
+  font-size:2.4rem;
   margin-bottom:25px;
   font-weight:800;
-
-  background:linear-gradient(45deg,#ff3cac,#784ba0,#ff3cac);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-
+  color:#8a2be2; /* violeta intenso sólido */
   text-shadow:
-    0 0 8px rgba(255,60,172,0.9),
-    0 0 15px rgba(120,75,160,0.7);
-
-  animation:glow 3s ease-in-out infinite alternate;
+    0 0 8px rgba(138,43,226,0.9),
+    0 0 18px rgba(75,0,130,0.8);
 }
 
-/* Párrafo con efecto suave */
+/* PÁRRAFO blanco sólido con sombra */
 p{
   font-size:1.15rem;
   line-height:1.8;
   font-weight:300;
-
   color:#ffffff;
-
   text-shadow:
-    0 0 6px rgba(255,60,172,0.6),
-    0 0 12px rgba(120,75,160,0.4);
-
-  animation:slideUp 2s ease forwards 1s;
-  opacity:0;
+    0 0 6px rgba(0,0,0,0.9),
+    0 0 12px rgba(0,0,0,0.7);
 }
 
-/* Animaciones */
-
+/* Animación entrada */
 @keyframes fadeIn{
   to{opacity:1;}
 }
 
-@keyframes slideUp{
-  from{
-    transform:translateY(30px);
-    opacity:0;
-  }
-  to{
-    transform:translateY(0);
-    opacity:1;
-  }
-}
-
-@keyframes glow{
-  from{
-    text-shadow:
-      0 0 10px rgba(255,60,172,1),
-      0 0 20px rgba(120,75,160,0.8);
-  }
-  to{
-    text-shadow:
-      0 0 18px rgba(255,60,172,1),
-      0 0 35px rgba(120,75,160,1);
-  }
-}
-
-/* Ajuste móvil real para reducir zoom */
+/* Ajuste móvil */
 @media (max-width:768px){
 
   body{
-    background-size:cover;
     background-position:center top;
+    background-size:cover;
   }
 
   .contenido{
@@ -138,6 +126,18 @@ p{
 
 <div class="overlay"></div>
 
+<div class="stars">
+  <!-- Generamos estrellas -->
+  <span style="top:10%;left:20%;animation-delay:1s;"></span>
+  <span style="top:30%;left:70%;animation-delay:2s;"></span>
+  <span style="top:50%;left:40%;animation-delay:0.5s;"></span>
+  <span style="top:70%;left:80%;animation-delay:3s;"></span>
+  <span style="top:85%;left:15%;animation-delay:1.5s;"></span>
+  <span style="top:60%;left:55%;animation-delay:2.5s;"></span>
+  <span style="top:25%;left:35%;animation-delay:0.8s;"></span>
+  <span style="top:75%;left:60%;animation-delay:1.2s;"></span>
+</div>
+
 <div class="contenido">
   <h1>Que tengas un hermoso día, Yenifer</h1>
   <p>
@@ -151,4 +151,3 @@ p{
 
 </body>
 </html>
-
