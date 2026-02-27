@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Yenifer 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:'Poppins',sans-serif;
+  background:url("fondo.jpg") center/cover no-repeat;
+  position:relative;
+  overflow:hidden;
+  text-align:center;
+  color:white;
+}
+
+/* Overlay oscuro para contraste profesional */
+body::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom,
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.75));
+  backdrop-filter: blur(4px);
+}
+
+/* Contenedor central */
+.container{
+  position:relative;
+  z-index:1;
+  max-width:850px;
+  padding:40px;
+  animation:fadeIn 2s ease forwards;
+  opacity:0;
+}
+
+/* Título estilo gamer romántico */
+h1{
+  font-family:'Orbitron',sans-serif;
+  font-size:clamp(2rem,5vw,3.5rem);
+  margin-bottom:25px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  background:linear-gradient(45deg,#ff4b91,#24c6dc);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:glow 3s infinite alternate;
+}
+
+/* Texto */
+p{
+  font-size:clamp(1rem,2.5vw,1.3rem);
+  line-height:1.8;
+  font-weight:300;
+  animation:slideUp 2s ease forwards 1.2s;
+  opacity:0;
+}
+
+/* Animaciones */
+@keyframes fadeIn{
+  to{opacity:1;}
+}
+
+@keyframes slideUp{
+  from{
+    transform:translateY(40px);
+    opacity:0;
+  }
+  to{
+    transform:translateY(0);
+    opacity:1;
+  }
+}
+
+@keyframes glow{
+  from{
+    text-shadow:0 0 10px rgba(255,75,145,0.7),
+                0 0 20px rgba(36,198,220,0.7);
+  }
+  to{
+    text-shadow:0 0 20px rgba(255,75,145,1),
+                0 0 40px rgba(36,198,220,1);
+  }
+}
+
+/* Botón opcional estilo gamer */
+.button{
+  margin-top:30px;
+  display:inline-block;
+  padding:12px 30px;
+  border:2px solid #ff4b91;
+  border-radius:30px;
+  font-family:'Orbitron',sans-serif;
+  color:#ff4b91;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.button:hover{
+  background:#ff4b91;
+  color:white;
+  box-shadow:0 0 20px #ff4b91;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Que tengas un hermoso día, Yenifer</h1>
+  <p>
+    No dejes de sonreírle a la vida.  
+    Tienes una energía especial que ilumina todo a tu alrededor.  
+    Hoy solo quería recordártelo.  
+    Que tengas un día increíble…  
+    y bastante BOOYAH 🔥
+  </p>
+
+  <a href="#" class="button">Para la Reina del Free Fire 💕</a>
+</div>
+
+</body>
+</html>
